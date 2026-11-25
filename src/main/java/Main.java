@@ -1,3 +1,4 @@
+import exception.InvalidEmailException;
 import exception.InvalidVanException;
 import exception.VanServiceNotFoundException;
 import model.*;
@@ -6,7 +7,7 @@ import service.NotificationService;
 import logistics.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidEmailException {
         NotificationService notificationService = new ConsoleNotificationService();
         VanLogistics VanLogistics = new VanLogistics(notificationService);
 
@@ -37,7 +38,7 @@ public class Main {
             VanLogistics.processPaymentByEmail("const@mail.ru");
             VanLogistics.processPaymentByEmail("corporate@tmiv.com");
         } catch (VanServiceNotFoundException e) {
-            System.out.println("Этот текст на экран не выведется 6767676767676766767: " + e.getMessage());
+            System.out.println("Этот текст на экран не выведется 67676767676767667678: " + e.getMessage());
         }
 
         // Сценарий 2: Проверяемое исключение (VanServiceNotFoundException)
